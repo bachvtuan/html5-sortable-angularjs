@@ -34,19 +34,19 @@ Define any varriable in scope with type is array
     ];
 Define sortable options
 
+    //Options for sortable code
     $scope.sortable_option = {
-      handle:'p',
+      //Only allow draggable when click on handle element
+      handle:'p.handle',
+      //Construct method before sortable code
       construct:function(model){
         for ( var i = 0; i < model.length; i++ ){
-          model[i].letter +=" construct";
+          model[i].letter +=" (constructed)";
         }
       },
-      stop:function(model){
-        $log.info("Callback on stop");
-        $log.info(model);
-        for ( var i = 0; i < model.length; i++ ){
-          model[i].letter +=" Callback";
-        }
+      //Callback after item is dropped
+      stop:function(list,drop_item){
+        drop_item.letter += " Dropped";
       }
     };
 
