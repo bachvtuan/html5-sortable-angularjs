@@ -1,5 +1,6 @@
 /*
   Author:bachvtuan@gmail.com
+  Website:http://dethoima.com
   A directive that support sortable list via html5 for angularjs
   Read the readme.md and take a look at example code before using.
 */
