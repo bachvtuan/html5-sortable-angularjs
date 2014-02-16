@@ -8,6 +8,7 @@ Below is some reference links that help me get an overview before coding this di
 
 - [Native HTML5 Drag and Drop](http://www.html5rocks.com/en/tutorials/dnd/basics/)
 
+##[DEMO LINK](http://bachvtuan.github.io/html5-sortable-angularjs/)
 ## Directive features
 1.  Native html5 sortable( jquery no longer required ).
 2.  Support sortable which array is given ( pass by ngModel)
