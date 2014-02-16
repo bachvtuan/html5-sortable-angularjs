@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Sortable HTML5</h1>
+  <div class="row">
+    <div class=" col-md-8">
+      <h3>Sortable group div with options</h3>
+      <div class="columns"  html-sortable="sortable_option" ng-model="list">
+        <div class="column" ng-repeat="item in list"  >
+          <header>{{item.letter}}</header>
+          <p class="handle">CLICK ME TO DRAG</p>
+          <div class="btn-group">
+            <button type="button" ng-click="append(item)" class="btn btn-default">EDIT</button>
+            <button type="button" ng-click="delete(list,item)" class="btn btn-danger">DELETE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>Sortable list is connected to left side</h3>
+      <ul class="nav nav-stacked" html-sortable="sortable_ul_option" ng-model="list" >
+        <li ng-repeat="item in list" >
+          <a>
+            <i class="glyphicon glyphicon-th-large handle" title="Click me to start drag"></i>
+            &nbsp;{{item.letter}}
+            </a>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+</div>
+<div class="container">
+  <h3>Sortable without options</h3>
+  <div class="columns second" html-sortable="" ng-model="list2">
+    <div class="column" ng-repeat="item in list2"  >
+      <header>{{item.title}}</header>
+      <p>{{item.content}}</p>
+    </div>
+  </div>
+</div>
