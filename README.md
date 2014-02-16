@@ -1,7 +1,7 @@
 HTML5 SORTABLE FOR ANGULARJS
 =============================
 
-I used sortable which provided by jqueryUI, That's good but it's pretty heavy to use because not just sortable code is included, I just need sortable method, So I decided make sortable items by html5 and every modern browsers could support this.  
+I used sortable which provided by jqueryUI at this [link](https://github.com/angular-ui/ui-sortable), That's good but it's pretty heavy to use because not just sortable code is included, I just need sortable method, So I decided make sortable items by html5 instead, almost modern browsers support this.  
 Below is some reference links that help me get an overview before coding this directive.  
 
 - [UI.Sortable directive](https://github.com/angular-ui/ui-sortable)
@@ -12,8 +12,8 @@ Below is some reference links that help me get an overview before coding this di
 ## Directive features
 1.  Native html5 sortable( jquery no longer required ).
 2.  Support sortable which array is given ( pass by ngModel)
-3.  You can make sortable by specific sub element in parent element
-4.  Callback when init directive or after drop item done.
+3.  You can choose specific handle element on item element.
+4.  Offer callback when init directive or after item is dropped.
 5.  Auto update sortable DOM when ngmodel is changed or removed sub item.
 6.  Easy configuration and using :)
 
@@ -61,7 +61,7 @@ Define sortable options
       </div>
     </div>
  
-If you don't use option you can edit to html-sortable="" in template.
+If you don't want using option, you can edit to html-sortable="" in template.
 
 ###Done
 Have fun !
