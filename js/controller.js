@@ -10,6 +10,8 @@ angular.module('app').controller('Index_Ctrl',
       {id:4,letter:'D'},
     ];
 
+    $scope.sortable_mode = "on";
+
     //Options for sortable code
     $scope.sortable_option = {
       //Only allow draggable when click on handle element

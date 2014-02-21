@@ -1,9 +1,14 @@
 <div class="container">
   <h1>Sortable HTML5</h1>
+  <a class="btn {{sortable_mode == 'on' ? 'btn-success': 'btn-warning'}}" 
+  ng-click=" sortable_mode = (sortable_mode == 'on') ? 'off' : 'on' "
+  >Toggle sortable({{sortable_mode}})</a>
   <div class="row">
     <div class=" col-md-8">
       <h3>Sortable group div with options</h3>
-      <div class="columns"  html-sortable="sortable_option" ng-model="list">
+      <div class="columns"  
+        html-sortable=" sortable_mode == 'on' ? sortable_option : 'stop' " 
+        ng-model="list">
         <div class="column" ng-repeat="item in list"  >
           <header>{{item.letter}}</header>
           <p class="handle">CLICK ME TO DRAG</p>
@@ -16,7 +21,9 @@
     </div>
     <div class="col-md-4">
       <h3>Sortable list is connected to left side</h3>
-      <ul class="nav nav-stacked" html-sortable="sortable_ul_option" ng-model="list" >
+      <ul class="nav nav-stacked"
+       html-sortable=" sortable_mode == 'on' ? sortable_ul_option : 'stop' " 
+       ng-model="list" >
         <li ng-repeat="item in list" >
           <a>
             <i class="glyphicon glyphicon-th-large handle" title="Click me to start drag"></i>
@@ -29,7 +36,7 @@
   </div>
 </div>
 <div class="container">
-  <h3>Sortable without options</h3>
+  <h3>Sortable without options and doesn't affect by sortable mode</h3>
   <div class="columns second" html-sortable="" ng-model="list2">
     <div class="column" ng-repeat="item in list2"  >
       <header>{{item.title}}</header>
