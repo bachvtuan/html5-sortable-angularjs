@@ -7,7 +7,7 @@
     <div class=" col-md-8">
       <h3>Sortable group div with options</h3>
       <div class="columns"  
-        html-sortable=" sortable_mode == 'on' ? sortable_option : 'stop' " 
+        html-sortable=" sortable_mode == 'on' ? sortable_option : 'destroy' " 
         ng-model="list">
         <div class="column" ng-repeat="item in list"  >
           <header>{{item.letter}}</header>
@@ -22,7 +22,7 @@
     <div class="col-md-4">
       <h3>Sortable list is connected to left side</h3>
       <ul class="nav nav-stacked"
-       html-sortable=" sortable_mode == 'on' ? sortable_ul_option : 'stop' " 
+       html-sortable=" sortable_mode == 'on' ? sortable_ul_option : 'destroy' " 
        ng-model="list" >
         <li ng-repeat="item in list" >
           <a>
@@ -32,9 +32,22 @@
         </li>
       </ul>
     </div>
-    
   </div>
-</div>
+  </div>
+  <div class="container">
+    <h3>Cross dropping</h3>
+    <div class="row">
+
+      <div class="col-md-3" ng-repeat="(group_id, list) in groups">
+        <ul class="nav nav-stacked" html-sortable="sortable_cross_option" ng-model="list" 
+        ng-extra-sortable="group_id" >
+          <li ng-repeat="letter in list" >
+            <a>{{letter}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 <div class="container">
   <h3>Sortable without options and doesn't affect by sortable mode</h3>
   <div class="columns second" html-sortable="" ng-model="list2">

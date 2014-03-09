@@ -23,13 +23,33 @@ angular.module('app').controller('Index_Ctrl',
         }
       },
       //Callback after item is dropped
-      stop:function(list,drop_item){
-        drop_item.letter += " Dropped";
+      stop:function(list,dropped_index){
+        list[ dropped_index].letter += " Dropped";
       }
     };
 
     $scope.sortable_ul_option = {
       handle:'.handle'
+    }
+
+    $scope.groups = {
+      'id1':['A','B','C'],
+      'id2':['E','F','G','H']
+    };
+      
+    
+    $scope.sortable_cross_option = {
+      allow_cross: true,
+      stop:function(list,dropped_index,extra_data, drag_extra_data){
+        var dropped_letter = list[dropped_index];
+        
+        for ( var i=0; $scope.groups[drag_extra_data].length; i++ ){
+          if ($scope.groups[drag_extra_data].indexOf(dropped_letter) != -1){
+            $scope.groups[drag_extra_data].splice(i,1);
+            break
+          }
+        }
+      }
     }
 
     //Another example
