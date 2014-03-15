@@ -46,13 +46,15 @@ angular.module('app').controller('Index_Ctrl',
           return;
         }
         var dropped_letter = list[dropped_index];
+        $log.info(dropped_letter);
+        $log.info(drag_extra_data);
+        
 
-        for ( var i=0; $scope.groups[drag_extra_data].length; i++ ){
-          if ($scope.groups[drag_extra_data].indexOf(dropped_letter) != -1){
-            $scope.groups[drag_extra_data].splice(i,1);
-            break
-          }
+        var find_index = $scope.groups[drag_extra_data].indexOf(dropped_letter);
+        if ( find_index != -1){
+          $scope.groups[drag_extra_data].splice(find_index,1);
         }
+        
       }
     }
 
