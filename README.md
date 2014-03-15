@@ -15,7 +15,7 @@ Below is some reference links that help me get an overview before coding this di
 3.  You can choose specific handle element on item element.
 4.  Offer callback when init directive or after item is dropped.
 5.  Auto update sortable DOM when ngmodel is changed or removed sub item.
-6.  Easy configuration and using :)
+6.  Cross dropping
 
 ## How to use
 Include html5.sortable to your app
