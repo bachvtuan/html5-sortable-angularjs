@@ -10,7 +10,7 @@
   -webkit-user-drag: element;
 }
 .html5-sortable .over{
-  border: 2px dashed #000;
+  border: 2px dashed #d2322d;
 }
 
 .html5-sortable .handle{
@@ -19,6 +19,14 @@
 
 .html5-sortable .moving{
   border: 2px solid #777;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
 }
 .column {
   height: 160px;

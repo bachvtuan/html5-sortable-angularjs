@@ -54,12 +54,18 @@ sortable_app.directive('htmlSortable', function($parse,$timeout, $log, $window) 
         }
 
         e.dataTransfer.dropEffect = 'move';
+        
+        if ( !this.classList.contains('over') ){
+          this.classList.add('over');
+        }
 
-        return false;
+        //return false;
       };
 
       sortable.handleDragEnter = function(e) {
-        this.classList.add('over');
+        if ( !this.classList.contains('over') ){
+          this.classList.add('over');
+        }
       };
 
       sortable.handleDragLeave = function(e) {
