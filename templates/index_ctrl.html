@@ -41,6 +41,7 @@
       <div class="col-md-3" ng-repeat="(group_id, list) in groups">
         <ul class="nav nav-stacked" html-sortable="sortable_cross_option" ng-model="list" 
         ng-extra-sortable="group_id" >
+          <p class="droppable" ng-if="list.length  == 0">Empty list</p>
           <li ng-repeat="letter in list" >
             <a>{{letter}}</a>
           </li>

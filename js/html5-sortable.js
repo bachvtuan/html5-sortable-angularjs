@@ -154,10 +154,28 @@ sortable_app.directive('htmlSortable', function($parse,$timeout, $log, $window) 
         sortable.is_handle = true;
       }
 
+      sortable.register_drop = function(element_children){
+        element_children.addEventListener('drop', sortable.handleDrop, false);
+        element_children.addEventListener('dragstart', sortable.handleDragStart, false);
+        element_children.addEventListener('dragenter', sortable.handleDragEnter, false);
+        element_children.addEventListener('dragover', sortable.handleDragOver, false);
+        element_children.addEventListener('dragleave', sortable.handleDragLeave, false);
+        element_children.addEventListener('drop', sortable.handleDrop, false);
+        element_children.addEventListener('dragend', sortable.handleDragEnd, false);
+      }
+
       sortable.update = function(){
         $log.info("Update sortable");
-         $window['drag_source'] = null;
+        $window['drag_source'] = null;
         var index = 0;
+        
+        //This's empty list, so just need listen drop from other
+        if ( element[0].className.indexOf('sortable-empty-list') != -1 ){
+          //Set index = 0( simulate first index )
+          element[0].children[0].index = 0;
+          sortable.register_drop(element[0].children[0]);
+          return;
+        }
         this.cols_ =  element[0].children;
 
         [].forEach.call(this.cols_, function (col) {
@@ -172,12 +190,7 @@ sortable_app.directive('htmlSortable', function($parse,$timeout, $log, $window) 
           index++;
 
           col.setAttribute('draggable', 'true');  // Enable columns to be draggable.
-          col.addEventListener('dragstart', sortable.handleDragStart, false);
-          col.addEventListener('dragenter', sortable.handleDragEnter, false);
-          col.addEventListener('dragover', sortable.handleDragOver, false);
-          col.addEventListener('dragleave', sortable.handleDragLeave, false);
-          col.addEventListener('drop', sortable.handleDrop, false);
-          col.addEventListener('dragend', sortable.handleDragEnd, false);
+          sortable.register_drop(col);
         });
 
         sortable.in_use = true;
@@ -192,15 +205,13 @@ sortable_app.directive('htmlSortable', function($parse,$timeout, $log, $window) 
             scope.$watch('ngExtraSortable',function(value){
               element.extra_data = value;
               //sortable.extra_data = value;
-            })
+            });
             
             scope.$watch('htmlSortable', function(value) {
               
-              $log.info("The fist time load html5-sortable");
               sortable.options = angular.copy(value) ;
 
               if (value == "destroy" ){
-                $log.info("destroy");
                 if (sortable.in_use){
                   sortable.unbind();
                   sortable.in_use = false;
@@ -219,6 +230,7 @@ sortable_app.directive('htmlSortable', function($parse,$timeout, $log, $window) 
               if ( angular.isDefined(sortable.options.construct) ){
                 sortable.options.construct(ngModel.$modelValue);
               }
+
               element[0].classList.add('html5-sortable');
               sortable.update();
               $timeout(function(){
@@ -232,7 +244,6 @@ sortable_app.directive('htmlSortable', function($parse,$timeout, $log, $window) 
                 //Ignore on first load
                 return;
               }
-              $log.info("Model changed");
               
               $timeout(function(){
                 sortable.update();

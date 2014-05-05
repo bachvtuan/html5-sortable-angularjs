@@ -9,7 +9,7 @@
   -khtml-user-drag: element;
   -webkit-user-drag: element;
 }
-.html5-sortable .over{
+.html5-sortable .over, .droppable.over{
   border: 2px dashed #d2322d;
 }
 
@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 
-.html5-sortable .moving{
+.html5-sortable .moving,.droppable.moving{
   border: 2px solid #777;
   -webkit-transition: -webkit-transform 0.2s ease-out;
   -moz-transition: -moz-transform 0.2s ease-out;
