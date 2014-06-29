@@ -38,8 +38,11 @@ sortable_app.directive('htmlSortable', function($parse,$timeout, $log, $window) 
 
         sortable.is_handle  = false;
         e.dataTransfer.effectAllowed = 'move';
-        //Fixed on firefox
-        e.dataTransfer.setData('text/plain', 'anything');
+        //Fixed on firefox and IE 11
+        if (sortable.browser != "IE"){
+          e.dataTransfer.setData('text/plain', 'anything');
+        }
+          
         
          $window['drag_source'] = this;
          $window['drag_source_extra'] = element.extra_data;
@@ -164,6 +167,20 @@ sortable_app.directive('htmlSortable', function($parse,$timeout, $log, $window) 
         element_children.addEventListener('dragend', sortable.handleDragEnd, false);
       }
 
+      sortable.getBrowser = function(){
+        var browser_agent = $window.navigator.userAgent;
+        if ( browser_agent.indexOf(".NET") != -1  ){
+          //IE 11
+          return "IE";
+        }
+        else if ( browser_agent.indexOf("Firefox") != -1 ){
+          return "Firefox";
+        }
+        else{
+          return "Chrome";
+        }
+      }
+
       sortable.update = function(){
         $log.info("Update sortable");
         $window['drag_source'] = null;
@@ -178,6 +195,9 @@ sortable_app.directive('htmlSortable', function($parse,$timeout, $log, $window) 
           }
           return;
         }
+
+        this.browser = this.getBrowser();
+
         this.cols_ =  element[0].children;
 
         [].forEach.call(this.cols_, function (col) {
