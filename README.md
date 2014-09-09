@@ -63,5 +63,9 @@ Define sortable options
  
 If you don't want using option, you can edit to html-sortable="" in template.
 
+## LICENSE
+
+MIT
+
 ###Done
 Have fun !
