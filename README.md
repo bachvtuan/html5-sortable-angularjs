@@ -45,8 +45,8 @@ Define sortable options
         }
       },
       //Callback after item is dropped
-      stop:function(list,drop_item){
-        drop_item.letter += " Dropped";
+      stop:function(list, dropped_index){
+        list[ dropped_index].letter += " Dropped";
       }
     };
 
