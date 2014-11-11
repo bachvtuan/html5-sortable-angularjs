@@ -57,7 +57,7 @@ Define sortable options
     <div class="columns" html-sortable="sortable_option" ng-model="list">
       <div class="column" ng-repeat="item in list"  >
         <header>{{item.letter}}</header>
-        <p>DRAG</p>
+        <p class="handle">DRAG</p>
       </div>
     </div>
  
