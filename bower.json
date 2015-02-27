@@ -5,8 +5,12 @@
   "authors": [
     "bachvtuan <bachvtuan@gmail.com>"
   ],
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
   "description": "HTML5 sortable for AngularJS",
-  "main": "\"lib/html5-sortable.js\"",
+  "main": "lib/html5-sortable.js",
   "keywords": [
     "html5",
     "sortable",
