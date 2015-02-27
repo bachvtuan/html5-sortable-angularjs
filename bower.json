@@ -6,8 +6,17 @@
     "bachvtuan <bachvtuan@gmail.com>"
   ],
   "ignore": [
+    "source",
+    "spec",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
     ".jshintrc",
-    "**/*.txt"
+    "bower.json",
+    "gruntfile.js",
+    "package.json",
+    "README.md",
+    "LICENSE",
   ],
   "description": "HTML5 sortable for AngularJS",
   "main": "lib/html5-sortable.js",
