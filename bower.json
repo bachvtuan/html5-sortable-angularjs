@@ -1,20 +1,16 @@
 {
   "name": "html5-sortable-angularjs",
   "version": "0.0.1",
-  "homepage": "http://decklord.github.io/html5-sortable-angularjs/",
+  "homepage": "http://bachvtuan.github.io/html5-sortable-angularjs/",
   "authors": [
     "bachvtuan <bachvtuan@gmail.com>"
   ],
   "ignore": [
-    "source",
-    "spec",
     ".bowerrc",
     ".gitignore",
     ".jshintignore",
     ".jshintrc",
     "bower.json",
-    "gruntfile.js",
-    "package.json",
     "README.md",
     "LICENSE",
   ],
