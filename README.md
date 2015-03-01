@@ -8,7 +8,10 @@ Below is some reference links that help me get an overview before coding this di
 
 - [Native HTML5 Drag and Drop](http://www.html5rocks.com/en/tutorials/dnd/basics/)
 
-##[DEMO LINK](http://bachvtuan.github.io/html5-sortable-angularjs/)
+## Demo
+
+[DEMO LINK](http://bachvtuan.github.io/html5-sortable-angularjs/)
+
 ## Directive features
 1.  Native html5 sortable( jquery no longer required ).
 2.  Support sortable which array is given ( pass by ngModel)
@@ -16,6 +19,12 @@ Below is some reference links that help me get an overview before coding this di
 4.  Offer callback when init directive or after item is dropped.
 5.  Auto update sortable DOM when ngmodel is changed or removed sub item.
 6.  Cross dropping
+
+## Bower install
+
+```
+bower install html5-sortable-angularjs
+```
 
 ## How to use
 Include html5.sortable to your app
@@ -67,5 +76,5 @@ If you don't want using option, you can edit to html-sortable="" in template.
 
 MIT
 
-###Done
+### Done
 Have fun !
