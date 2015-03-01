@@ -13,7 +13,7 @@
     ".jshintrc",
     "bower.json",
     "README.md",
-    "LICENSE",
+    "LICENSE"
   ],
   "description": "HTML5 sortable for AngularJS",
   "keywords": [
