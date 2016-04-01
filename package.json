@@ -1,0 +1,24 @@
+{
+  "name": "html5-sortable-angularjs",
+  "version": "0.0.1",
+  "main": "lib/html5-sortable.js",
+  "homepage": "http://bachvtuan.github.io/html5-sortable-angularjs/",
+  "author": "bachvtuan <bachvtuan@gmail.com>",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bachvtuan/html5-sortable-angularjs.git"
+  },
+    "bugs": {
+      "url": "https://github.com/bachvtuan/html5-sortable-angularjs/issues"
+    },
+  "description": "HTML5 sortable for AngularJS",
+  "keywords": [
+    "html5",
+    "sortable",
+    "angularjs"
+  ],
+  "license": "MIT"
+}
