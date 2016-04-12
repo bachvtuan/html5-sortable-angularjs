@@ -20,11 +20,18 @@ Below is some reference links that help me get an overview before coding this di
 5.  Auto update sortable DOM when ngmodel is changed or removed sub item.
 6.  Cross dropping
 
-## Bower install
+## Bower
 
 ```
 bower install html5-sortable-angularjs
 ```
+
+## NPM
+
+```
+npm i html5-sortable-angularjs
+```
+
 
 ## How to use
 Include html5.sortable to your app
